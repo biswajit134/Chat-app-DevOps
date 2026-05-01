@@ -24,20 +24,20 @@ jobs:
 
 
 
-            - name: docker build image
-              run: |
-                docker build -t ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest ./frontend
-                echo "Docker images built successfully"
+            # - name: docker build image
+            #   run: |
+            #     docker build -t ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest ./frontend
+            #     echo "Docker images built successfully"
 
-            - name: Push images to Docker Hub
-              run: |
-                docker push ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest
-                echo "Docker images pushed to Docker Hub successfully"
+            # - name: Push images to Docker Hub
+            #   run: |
+            #     docker push ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest
+            #     echo "Docker images pushed to Docker Hub successfully"
 
 
-            # - name: Build and push Docker image
-            #   uses: docker/build-push-action@v7
-            #   with:
-            #     context: ./frontend
-            #     push: true
-            #     tags: ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v7
+              with:
+                context: ./frontend
+                push: true
+                tags: ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest
