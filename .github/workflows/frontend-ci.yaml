@@ -30,4 +30,4 @@ jobs:
               with:
                 context: ./frontend
                 push: true
-                tags: your-dockerhub-username/frontend:latest
+                tags: ${{ secrets.DOCKER_USERNAME }}/chat-app:latest
