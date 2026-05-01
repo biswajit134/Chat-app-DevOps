@@ -1,9 +1,9 @@
-name: Frontend CI
+name: Backend CI
 on:
   push:
     branches: [main]
-    paths: 
-      - 'frontend/**'
+    paths:
+      - 'backend/**'
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -28,6 +28,6 @@ jobs:
             - name: Build and push Docker image
               uses: docker/build-push-action@v7
               with:
-                context: ./frontend
+                context: ./backend
                 push: true
-                tags: ${{ secrets.DOCKER_USERNAME }}/chatapp-frontend:latest
+                tags: ${{ secrets.DOCKER_USERNAME }}/chatapp-backend:latest
