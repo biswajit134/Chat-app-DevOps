@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: {{ .Values.image }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5001
+        env:
+        - name: MONGODB_URI
+          value: "{{ .Values.env.MONGODB_URI }}"
+        - name: PORT
+          value: "{{ .Values.env.PORT }}"
+        - name: NODE_ENV
+          value: "{{ .Values.env.NODE_ENV }}"
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: backend-secrets
+              key: jwt-secret
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"

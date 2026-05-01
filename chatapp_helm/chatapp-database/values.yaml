@@ -1,0 +1,9 @@
+namespace: chat-app
+replicaCount: 1
+image: iemafzal/mongodb:v1
+
+environment:
+  MONGO_INITDB_ROOT_USERNAME: root
+  MONGO_INITDB_ROOT_PASSWORD: admin
+service:
+  type: ClusterIP
