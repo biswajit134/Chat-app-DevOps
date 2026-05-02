@@ -21,13 +21,13 @@ spec:
         - containerPort: 5001
         env:
         - name: MONGODB_URI
-          value: "{{ .Values.env.MONGODB_URI }}"
+          value: {{ .Values.env.MONGODB_URI }}
         - name: PORT
-          value: "{{ .Values.env.PORT }}"
+          value: {{ .Values.env.PORT }}
         - name: NODE_ENV
-          value: "{{ .Values.env.NODE_ENV }}"
+          value: {{ .Values.env.NODE_ENV }}
         - name: JWT_SECRET
-          value: "{{ .Values.env.jwt-secret }}"
+          value: {{ .Values.env.jwt_secret }}
           # valueFrom:
           #   secretKeyRef:
           #     name: backend-secrets

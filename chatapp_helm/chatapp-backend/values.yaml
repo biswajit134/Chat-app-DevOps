@@ -6,7 +6,7 @@ env:
  MONGODB_URI: "mongodb://root:admin@mongodb:27017/chatApp?authSource=admin"
  PORT: "5001"
  NODE_ENV: "production"
- jwt-secret: "your_jwt_secret_key"
+ jwt_secret: "your_jwt_secret_key"
 
 
 servicetype: NodePort
