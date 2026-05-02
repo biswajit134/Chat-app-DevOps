@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: chatapp-database
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/biswajit134/Chat-app-DevOps.git
+    targetRevision: main
+    path: chatapp_helm/chatapp-database
+    helm:
+      releaseName: chatapp-database
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: chat-app
