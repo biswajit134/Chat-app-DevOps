@@ -27,10 +27,11 @@ spec:
         - name: NODE_ENV
           value: "{{ .Values.env.NODE_ENV }}"
         - name: JWT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: backend-secrets
-              key: jwt-secret
+          value: "{{ .Values.env.jwt-secret }}"
+          # valueFrom:
+          #   secretKeyRef:
+          #     name: backend-secrets
+          #     key: jwt-secret
         resources:
           limits:
             memory: "512Mi"
