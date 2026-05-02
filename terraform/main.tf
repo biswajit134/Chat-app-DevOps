@@ -12,6 +12,6 @@ depends_on = [module.metallb]
 }
 
 module "chatapp" {
-depends_on = [module.argocd]
+depends_on = [module.argocd, module.kind-cluster]
   source = "./module/chatapp"
 }
