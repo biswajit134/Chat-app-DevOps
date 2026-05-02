@@ -21,13 +21,12 @@ spec:
         - containerPort: 5001
         env:
         - name: MONGODB_URI
-          value: {{ .Values.env.MONGODB_URI }}
+          value: "mongodb://root:admin@mongodb:27017/chatApp?authSource=admin"
         - name: PORT
-          value: {{ .Values.env.PORT }}
+          value: "5001"
         - name: NODE_ENV
-          value: {{ .Values.env.NODE_ENV }}
+          value: "production"
         - name: JWT_SECRET
-          # value: {{ .Values.env.jwt_secret }}
           valueFrom:
             secretKeyRef:
               name: backend-secrets
