@@ -8,7 +8,8 @@ spec:
   source:
     repoURL: https://github.com/biswajit134/Chat-app-DevOps.git
     targetRevision: main
-    path: k8s
+    path: k8s_demo
+
 
   syncPolicy:
     automated:
