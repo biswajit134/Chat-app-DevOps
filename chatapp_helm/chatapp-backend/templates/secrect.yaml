@@ -5,4 +5,4 @@ metadata:
   namespace: {{ .Values.namespace }}
 type: Opaque
 stringData:
-  jwt-secret: "Ymlzd2FqaXQ="
+  jwt-secret: Ymlzd2FqaXQ=
