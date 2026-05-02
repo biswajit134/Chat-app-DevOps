@@ -3,10 +3,9 @@ replicas: 2
 image: biswajit134/chatapp-backend:latest
 
 env:
- MONGODB_URI: mongodb://root:admin@mongodb:27017/chatApp?authSource=admin
- PORT: 5001
- NODE_ENV: production
- jwt_secret: 8FZbDDw1sYGmKo7tj8RBAcjB0hfDMF4ygCul8bubMka
-
+ MONGODB_URI: "mongodb://root:admin@mongodb:27017/chatApp?authSource=admin"
+ PORT: "5001"
+ NODE_ENV: "production"
+#  jwt_secret: "8FZbDDw1sYGmKo7tj8RBAcjB0hfDMF4ygCul8bubMka"
 
 servicetype: NodePort
