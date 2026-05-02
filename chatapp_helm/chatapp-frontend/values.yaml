@@ -6,4 +6,4 @@ env:
   NODE_ENV: production
   BACKEND_URL: http://backend:5001
 
-servicetype: NodePort
+servicetype: LoadBalancer
