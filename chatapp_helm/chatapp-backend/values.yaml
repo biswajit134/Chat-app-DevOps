@@ -1,6 +1,6 @@
 namespace: chat-app
 replicas: 2
-image: biswajit134/chatapp-backend:latest
+image: iemafzal/backend:v1
 
 # env:
 #  MONGODB_URI: "mongodb://root:admin@mongodb:27017/chatApp?authSource=admin"

@@ -21,9 +21,9 @@ spec:
         - containerPort: 80
         env:
         - name: NODE_ENV
-          value: {{ .Values.env.NODE_ENV }}
+          value: "production"
         - name: BACKEND_URL
-          value: {{ .Values.env.BACKEND_URL }}
+          value: "http://backend:5001"
         readinessProbe:
           httpGet:
             path: /

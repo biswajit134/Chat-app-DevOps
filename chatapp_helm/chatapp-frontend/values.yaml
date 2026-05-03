@@ -1,7 +1,7 @@
 namespace: chat-app
 replicas: 2
 
-image: biswajit134/chatapp-frontend:latest
+image: iemafzal/frontend:v1
 env:
   NODE_ENV: production
   BACKEND_URL: http://backend:5001
